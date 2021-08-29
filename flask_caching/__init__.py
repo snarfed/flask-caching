@@ -537,7 +537,7 @@ class Cache(object):
 
                 cache_hash = str(cache_hash.hexdigest())
 
-                cache_key = request.path + cache_hash
+                cache_key = request.method + request.path + cache_hash
 
                 return cache_key
 
@@ -549,7 +549,7 @@ class Cache(object):
                         cache_key = key_prefix()
                     elif "%s" in key_prefix:
                         if use_request:
-                            cache_key = key_prefix % request.path
+                            cache_key = key_prefix % (request.method + request.path)
                         else:
                             cache_key = key_prefix % url_for(
                                 f.__name__, **kwargs
