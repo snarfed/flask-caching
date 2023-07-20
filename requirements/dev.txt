@@ -87,7 +87,7 @@ py==1.11.0
     # via
     #   pytest-xprocess
     #   tox
-pygments==2.12.0
+pygments==2.15.0
     # via
     #   sphinx
     #   sphinx-tabs
